@@ -10,9 +10,25 @@ public class RepeatAdditionQuiz {
         int answer = scanner_input.nextInt();
         while (number1 + number2 != answer)
         {
+            if (answer == 100)
+            {
+                continue;
+            }
             System.out.print("Wrong Answer. Try again.What is " + number1 +" + "+number2+" ? ");
             answer = scanner_input.nextInt();
+
+            if (answer == 50)
+            {
+                break;
+            }
         }
         System.out.println("You're right");
+
+        int[] array={12,43,54};
+        for (int element: array)
+        {
+            System.out.print(element);
+
+        }
     }
 }
