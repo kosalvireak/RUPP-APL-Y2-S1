@@ -2,6 +2,9 @@ package Class_Object;
 
 public class Author {
     public String firstName;
+    public String middleName = "midd";
+
+
     public String lastName;
     public Author(String firstName, String lastName){
         this.firstName = firstName;
@@ -21,9 +24,24 @@ public class Author {
 //        System.out.println("The last name is: " + this.lastName);
         return "The last name is: " + this.lastName;
     }
-    public String toString(){
-        return "The name is of the author is : " + this.firstName +" "+ this.lastName;
+
+    @Override
+    public String toString() {
+        if (middleName == null){
+        return "Author{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
+        else {
+            return "Author{" +
+                    "firstName='" + firstName + '\'' +
+                    ", middleName='" + middleName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    '}';
+        }
+
+        }
 
     public static void main(String[] arsgs) {
         Author author1 = new Author("Khoeun","Vireak");
@@ -32,6 +50,8 @@ public class Author {
         System.out.println(author1.getLastName());
         System.out.println(author1.getFirstName());
         System.out.println(author1.toString());
+
+
 
 
     }
