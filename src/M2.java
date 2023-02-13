@@ -2,7 +2,7 @@ public class M2 {
 
     public String Mazer = "Hanna";
 
-    public String m1_room = new M1().room;
+//    public String m1_room = new M1().room;
     public void Dance(int number)
     {
         System.out.println("We don't dance at M2");

@@ -16,6 +16,7 @@ public class BankAccount {
         double newBalance = balance + amount;
         balance = newBalance;
         TransactionCount++;
+        this.withdraw(amount);
     }
     public void withdraw(double amount)
     {
@@ -35,10 +36,10 @@ public class BankAccount {
     }
     public static  void main(String[] args)
     {
-        BankAccount vireakBank = new BankAccount(157);
+        BankAccount vireakBank = new BankAccount(100);
         vireakBank.deposit(50);
         vireakBank.deposit(45);
-        vireakBank.withdraw(20);
+//        vireakBank.withdraw(20);
         System.out.println("Balance "+vireakBank.getBalance());
 
         System.out.println("Transaction Count "+vireakBank.getTransactionCount());
