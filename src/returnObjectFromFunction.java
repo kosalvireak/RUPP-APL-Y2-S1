@@ -17,10 +17,4 @@
 //        returnObjectFromFunction rec = new getInstance();
 //    }
 //}
-//
-//
-//
-//
-//
-//
-//
+
