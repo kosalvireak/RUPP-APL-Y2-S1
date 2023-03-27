@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Person {
     public String name;
     public Integer age;
@@ -94,20 +96,20 @@ class Course{
 }
 class Classroom{
     public Course course;
-    public Student[] students;
+    public ArrayList<Student> students;
 
-    public Classroom(Course course, Student[] students) {
+    public Classroom(Course course, ArrayList<Student> students) {
         this.course = course;
         this.students = students;
     }
     public double getAverageGPA(){
         double avgGPA ,sumGPA= 0;
 
-        for (int i = 0; i < students.length; i++) {
-            Student obj = students[i];
+        for (int i = 0; i < students.size(); i++) {
+            Student obj = students.get(i);
             sumGPA += obj.getGpa();
         }
-        avgGPA = sumGPA / (students.length);
+        avgGPA = sumGPA / (students.size());
 
         return avgGPA;
     }
@@ -121,10 +123,15 @@ class Classroom{
     }
     public static void main(String[] args) {
         Teacher vireak = new Teacher("Vireak",20,"APL",3);
-        Student[] students = new Student[3];
-        students[0] = new Student("Nyvath",18,2,3.8);
-        students[1] = new Student("David",19,2,3.5);
-        students[2]= new Student("Khoelin",20,2,3.4);
+        ArrayList<Student> students = new ArrayList<Student>(3);
+        Student nyvath = new Student("Nyvath",18,2,3.8);
+        Student david = new Student("David",19,2,3.5);
+        Student khoelin= new Student("Khoelin",20,2,3.4);
+        Student nalis= new Student("Nalis",19,2,3.5);
+        students.add(nyvath);
+        students.add(david);
+        students.add(khoelin);
+        students.add(nalis);
         Course apl = new Course("APL",vireak);
         Classroom classroom = new Classroom(apl,students);
         System.out.println("course name "+classroom.getCourse());
