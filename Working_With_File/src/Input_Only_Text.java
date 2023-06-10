@@ -23,7 +23,7 @@ public class Input_Only_Text {
                     System.out.println(e.getMessage());
                 }
             try{
-                File file = new File("only text.txt");
+                File file = new File("ABC/only text.txt");
                 if(!file.exists()){
                     file.createNewFile();
                 }
